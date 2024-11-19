@@ -8,6 +8,7 @@ import LessonNo from "../Components/LessonNo";
 import Error from "../Pages/Error";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivetRouter from "./PrivetRouter";
 
 const Router = createBrowserRouter([
     {
@@ -25,15 +26,15 @@ const Router = createBrowserRouter([
             },
             {
                 path: "Tutorial",
-                element: <Tutorial></Tutorial>
+                element: <PrivetRouter><Tutorial></Tutorial></PrivetRouter>
             },
             {
                 path: "MyProfile",
-                element: <MyProfile></MyProfile>
+                element: <PrivetRouter><MyProfile></MyProfile></PrivetRouter>
             },
             {
                 path: "Letslearn/:id",
-                element: <LessonNo></LessonNo>,
+                element: <PrivetRouter><LessonNo></LessonNo></PrivetRouter>,
                 loader: ()=> fetch("vocabulary.json")
             },
             {

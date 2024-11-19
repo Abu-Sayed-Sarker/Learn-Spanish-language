@@ -3,7 +3,20 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext)
+    const { user, LogOut } = useContext(AuthContext)
+
+
+    const hendelSignOutButton = () => {
+        LogOut()
+            .then(() => {
+            console.log("Log Out Success");
+            
+            })
+            .catch((error) => {
+                console.log(error);
+                
+              });
+    }
 
     return (
         <div>
@@ -63,7 +76,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"Login"}><a className="btn bg-secound-color hover:bg-farst-color">Button</a></Link>
+                    {
+                        user && user?.email ? <button onClick={hendelSignOutButton} className="btn bg-secound-color hover:bg-farst-color">Log Out</button> : <Link to={"Login"}><button className="btn bg-secound-color hover:bg-farst-color">Log In</button></Link>
+                    }
                 </div>
             </div>
         </div>
