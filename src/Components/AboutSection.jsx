@@ -1,4 +1,5 @@
 import aboutImg from "../assets/Readingbook.png"
+import 'animate.css';
 const AboutSection = () => {
     return (
         <div>
@@ -10,7 +11,7 @@ const AboutSection = () => {
                         className="rounded-lg shadow-2xl" />
                     </div>
                     <div className="lg:w-1/2 w-full">
-                        <h1 className="text-5xl font-bold text-fourth-color">About Lesson</h1>
+                        <h1 className="text-5xl font-bold text-fourth-color animate__jello">About Lesson</h1>
                         <div className="">
                         <ul className="py-4 space-y-2">
                                 <h4 className="font-bold text-secound-color text-xl">Alphabet and Pronunciation</h4>
