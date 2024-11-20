@@ -10,6 +10,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivetRouter from "./PrivetRouter";
 import UpDateProfilr from "../Components/UpDateProfilr";
+import ForgatePassword from "../Components/ForgatePassword";
 
 const Router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const Router = createBrowserRouter([
             {
                 path: "Letslearn",
                 element: <LetsLearning></LetsLearning>,
-                loader: ()=> fetch("lesson.json")
+                loader: ()=> fetch("/lesson.json")
             },
             {
                 path: "Tutorial",
@@ -36,7 +37,7 @@ const Router = createBrowserRouter([
             {
                 path: "Letslearn/:id",
                 element: <PrivetRouter><LessonNo></LessonNo></PrivetRouter>,
-                loader: ()=> fetch("vocabulary.json")
+                loader: ()=> fetch("/vocabulary.json")
             },
             {
                 path: "Login",
@@ -49,6 +50,10 @@ const Router = createBrowserRouter([
             {
                 path: "update-profile",
                 element: <PrivetRouter><UpDateProfilr></UpDateProfilr></PrivetRouter>
+            },
+            {
+                path: "Forgat",
+                element: <ForgatePassword></ForgatePassword>
             }
         ],
     },

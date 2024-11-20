@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from "../Firebase/Firebase.config";
 
 
@@ -13,6 +13,11 @@ const AuthProvider = ({children}) => {
     const [user, setuser] = useState(null)
 
     const [loding, setloding] = useState(true)
+
+    //forget pass
+    const [Value, setValue] = useState("")
+
+    
 
 
 
@@ -68,8 +73,16 @@ const AuthProvider = ({children}) => {
     //update profile
 
     const upDaterofile = upDate => {
-        console.log(upDate);
+        
         return updateProfile(auth.currentUser , upDate)
+    }
+
+
+
+    //reset password
+
+    const reasetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
     }
     
 
@@ -82,7 +95,10 @@ const AuthProvider = ({children}) => {
         LogIn,
         loding,
         upDaterofile,
-        googleLogIn
+        googleLogIn,
+        setValue,
+        Value,
+        reasetPassword
     }
     
     

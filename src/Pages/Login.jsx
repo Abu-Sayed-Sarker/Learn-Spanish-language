@@ -7,7 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
 
-    const { LogIn, setuser, googleLogIn } = useContext(AuthContext)
+    const { LogIn, setuser, googleLogIn, setValue } = useContext(AuthContext)
 
 
     const Location = useLocation()
@@ -28,6 +28,13 @@ const Login = () => {
             })
     }
 
+    
+    const inputValue = event => {
+        setValue(event.target.value);
+        
+    }
+    
+    
     
 
 
@@ -56,14 +63,14 @@ const Login = () => {
     }
     return (
         <div className="flex justify-center items-center h-screen">
-            <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-10">
+            <div className="card bg-third-color w-full max-w-lg shrink-0 shadow-2xl p-10">
                 <h2 className="text-center font-semibold text-4xl">Login your account</h2>
                 <form onSubmit={handleLoginSubmission} className="card-body">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                        <input onChange={inputValue} name="email" type="email" placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -71,7 +78,7 @@ const Login = () => {
                         </label>
                         <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <Link to={"/Forgat"}><a href="#" className="label-text-alt link link-hover">Forgot password?</a></Link>
                         </label>
                     </div>
                     <div className="form-control mt-6 ">

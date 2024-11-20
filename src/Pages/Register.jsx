@@ -47,7 +47,7 @@ const Register = () => {
     return (
         <div>
             <div className="flex justify-center items-center h-screen">
-            <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-10">
+            <div className="card bg-third-color w-full max-w-lg shrink-0 shadow-2xl p-10">
                 <h2 className="text-center font-semibold text-4xl">Register your account</h2>
                 <form onSubmit={henselSubmission} className="card-body">
                 <div className="form-control">
