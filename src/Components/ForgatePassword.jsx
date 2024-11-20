@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const ForgatePassword = () => {
+    const navigate = useNavigate()
 
     const { Value, reasetPassword } = useContext(AuthContext)
 
@@ -10,7 +12,8 @@ const ForgatePassword = () => {
         e.preventDefault()
         const email = e.target.email.value
         reasetPassword(email)
-        .then(() => {
+            .then(() => {
+            navigate("Login")
             toast.success("Reaset password")
           })
           .catch((error) => {

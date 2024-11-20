@@ -66,9 +66,9 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to={"/"}>Home</NavLink>
-                            <NavLink to={"Letslearn"}>Start-Learning</NavLink>
-                            <NavLink to={"Tutorial"}>Tutorials</NavLink>
-                            <NavLink to={"MyProfile"}>My-profile</NavLink>
+                            <NavLink to={"/Letslearn"}>Start-Learning</NavLink>
+                            <NavLink to={"/Tutorial"}>Tutorials</NavLink>
+                            <NavLink to={"/MyProfile"}>My-profile</NavLink>
                         </ul>
                     </div>
                     <a className="text-fourth-color font-bold text-xl">Word Up</a>
@@ -76,9 +76,9 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-4">
                         <NavLink to={"/"}>Home</NavLink>
-                        <NavLink to={"Letslearn"}>Start-Learning</NavLink>
-                        <NavLink to={"Tutorial"}>Tutorials</NavLink>
-                        <NavLink to={"MyProfile"}>My-profile</NavLink>
+                        <NavLink to={"/Letslearn"}>Start-Learning</NavLink>
+                        <NavLink to={"/Tutorial"}>Tutorials</NavLink>
+                        <NavLink to={"/MyProfile"}>My-profile</NavLink>
                     </ul>
                 </div>
                 

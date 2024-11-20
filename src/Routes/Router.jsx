@@ -35,30 +35,30 @@ const Router = createBrowserRouter([
                 element: <PrivetRouter><MyProfile></MyProfile></PrivetRouter>
             },
             {
-                path: "Letslearn/:id",
+                path: "/Letslearn/:id",
                 element: <PrivetRouter><LessonNo></LessonNo></PrivetRouter>,
                 loader: ()=> fetch("/vocabulary.json")
             },
             {
-                path: "Login",
+                path: "/Login",
                 element: <Login></Login>
             },
             {
-                path: "ragister",
+                path: "/ragister",
                 element: <Register></Register>
             },
             {
-                path: "update-profile",
+                path: "/update-profile",
                 element: <PrivetRouter><UpDateProfilr></UpDateProfilr></PrivetRouter>
             },
             {
-                path: "Forgat",
+                path: "/Forgat",
                 element: <ForgatePassword></ForgatePassword>
             }
         ],
     },
     {
-        path: "*",
+        path: "/*",
         element: <Error></Error>
     }
 ])

@@ -21,7 +21,6 @@ const UpDateProfilr = () => {
         upDaterofile({ displayName: name, photoURL: photo })
             .then(() => {
                 navigat("/MyProfile")
-                window.location.reload();
             }).catch((err) => {
                 const errorCode = err.code;
                 toast.error(errorCode)

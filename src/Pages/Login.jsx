@@ -14,12 +14,14 @@ const Login = () => {
     const navigat = useNavigate()
     const Provider = new GoogleAuthProvider()
 
+    console.log(Location.state);
+    
+
     const googleLogInBtn = () => {
         googleLogIn(Provider)
-            .then((result) => {
-                setuser(result)
-                navigat(Location?.state ? Location.state : "/")
-                window.location.reload();
+        .then((result) => {
+            setuser(result)
+            navigat(Location.state ? Location.state : "/")
                 toast.success("Log In Success");
             }).catch((error) => {
                 // Handle Errors here.
@@ -48,7 +50,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setuser(user)
-                navigat(Location?.state ? Location.state : "/")
+                navigat(Location.state ? Location.state : "/")
                 e.target.reset();
                 toast.success("Log In Success");
 
