@@ -3,14 +3,30 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
 
-    const { LogIn, setuser } = useContext(AuthContext)
+    const { LogIn, setuser, googleLogIn } = useContext(AuthContext)
 
 
     const Location = useLocation()
     const navigat = useNavigate()
+    const Provider = new GoogleAuthProvider()
+
+    const googleLogInBtn = () => {
+        googleLogIn(Provider)
+            .then((result) => {
+                setuser(result)
+                navigat(Location?.state ? Location.state : "/")
+                window.location.reload();
+                toast.success("Log In Success");
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code
+                toast.error(errorCode)
+            })
+    }
 
     
 
@@ -27,6 +43,7 @@ const Login = () => {
                 setuser(user)
                 navigat(Location?.state ? Location.state : "/")
                 e.target.reset();
+                toast.success("Log In Success");
 
             })
             .catch((error) => {
@@ -60,10 +77,10 @@ const Login = () => {
                     <div className="form-control mt-6 ">
                         <button className="btn btn-primary bg-secound-color hover:bg-farst-color">Login</button>
                     </div>
-                    <div className="mx-auto mt-3">
-                        <button className="text-left btn bg-transparent bg-secound-color hover:bg-farst-color hover:text-white"><FaGoogle /> Login with Google</button>
-                    </div>
                 </form>
+                    <div className="mx-auto pb-3">
+                        <button onClick={googleLogInBtn} className="text-left btn bg-transparent bg-secound-color hover:bg-farst-color hover:text-white"><FaGoogle /> Login with Google</button>
+                    </div>
                 <p className="text-center font-semibold">Dont’t Have An Account ? <Link to={"/ragister"} className="text-red-600">Register</Link></p>
             </div>
         </div>
