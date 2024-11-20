@@ -17,7 +17,7 @@ const Home = () => {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: true, 
+            once: true,
             easing: 'ease-in-out',
         })
     }, [])
@@ -26,10 +26,14 @@ const Home = () => {
     return (
         <div>
             <div data-aos="zoom-in"><Banner></Banner></div>
-            <div data-aos="fade-right"><AboutSection></AboutSection></div>
-            <div data-aos="fade-left"><Sucssec></Sucssec></div>
-            <div data-aos="fade-right"><MeetOurTeem></MeetOurTeem></div>
-            <div data-aos="fade-left"><LiveClasses></LiveClasses></div>
+            <div data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"><AboutSection></AboutSection></div>
+            <div data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"><Sucssec></Sucssec></div>
+            <div data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"><MeetOurTeem></MeetOurTeem></div>
+            <div data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"><LiveClasses></LiveClasses></div>
 
         </div>
     );

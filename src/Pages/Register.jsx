@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -8,8 +8,11 @@ const Register = () => {
 
     const navigat = useNavigate()
 
+    const [Err, setError] = useState("")
+
     
     const henselSubmission = e => {
+        setError("")
         e.preventDefault()
 
         const form = new FormData(e.target)
@@ -18,6 +21,21 @@ const Register = () => {
         const email = form.get("email");
         const password = form.get("password");
         console.log(name, photo);
+
+
+        if (password.length < 5) {
+            setError("Password must be at 6 character")
+            return;
+        }
+        if (!/[a-z]/.test(password)) {
+            setError("Must have a lowercase letter in the password")
+            return;
+        }
+        if (!/[A-Z]/.test(password)) {
+            setError("Must have a Uppercase letter in the password")
+            return;
+        }
+        
         
 
         createNewUser(email, password)
@@ -72,7 +90,8 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                            <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                            <p className="text-sm text-red-700">{ Err ? Err : "" }</p>
                     </div>
                     <div className="form-control mt-6 ">
                         <button className="btn btn-primary bg-secound-color hover:bg-farst-color">Register</button>

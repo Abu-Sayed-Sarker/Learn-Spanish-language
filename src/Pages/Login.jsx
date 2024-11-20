@@ -14,13 +14,12 @@ const Login = () => {
     const navigat = useNavigate()
     const Provider = new GoogleAuthProvider()
 
-    console.log(Location.state);
     
 
     const googleLogInBtn = () => {
         googleLogIn(Provider)
         .then((result) => {
-            setuser(result)
+            setuser(result.user)
             navigat(Location.state ? Location.state : "/")
                 toast.success("Log In Success");
             }).catch((error) => {

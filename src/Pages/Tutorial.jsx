@@ -4,7 +4,7 @@ const Tutorial = () => {
         <div>
             <h1 className="text-5xl font-bold text-fourth-color mt-6">Tutorial</h1>
 
-            <div className="mt-12 grid lg:grid-cols-3 grid-cols-1 gap-6">
+            <div className="mt-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                 <div className="">
                     <iframe className="rounded-lg overflow-hidden" width="330" height="200" src="https://www.youtube.com/embed/arZ9PCqmCa4" title="The Spanish Alphabet: How to Say the Letters &amp; Sounds" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
