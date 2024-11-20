@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const Layouts = () => {
     return (
@@ -10,10 +11,11 @@ const Layouts = () => {
                 <Navbar></Navbar>
             </div>
             <div className="w-11/12 mx-auto min-h-96">
+                <Toaster />
                 <Outlet></Outlet>
 
             </div>
-                <Footer></Footer>
+            <Footer></Footer>
         </div>
     );
 };

@@ -1,9 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
-    const {createNewUser, setuser} = useContext(AuthContext)
+    const { createNewUser, setuser, upDaterofile } = useContext(AuthContext)
+
+    const navigat = useNavigate()
+
+    
     const henselSubmission = e => {
         e.preventDefault()
 
@@ -15,22 +20,29 @@ const Register = () => {
         console.log(name, photo);
         
 
-
         createNewUser(email, password)
 
         .then((result) => {
             const user = result.user;
             setuser(user)
+            toast.success("Log In success")
+            upDaterofile({ displayName: name, photoURL: photo })
+                .then(() => {
+                navigat("/")
+                }).catch ((err) => {
+                    const errorCode = err.code;
+                    toast.error(errorCode)
+            })
+            
             e.target.reset()
             
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode,errorMessage);
+            toast.error(errorCode)
             
             // ..
-          });
+        });
     }
     return (
         <div>

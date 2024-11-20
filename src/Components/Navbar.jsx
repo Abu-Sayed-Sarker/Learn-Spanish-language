@@ -4,6 +4,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
     const { user, LogOut } = useContext(AuthContext)
+    console.log(user);
+    
 
 
     const hendelSignOutButton = () => {
@@ -24,13 +26,14 @@ const Navbar = () => {
                 user? <div className="flex w-11/12 mx-auto justify-between py-2">
                 <h4 className="font-semibold text-xl uppercase">
                     {
-                        user?.name
+                        user?.displayName
+
                     }
                 </h4>
 
                 <h4 className="font-semibold text-xl">
                     {
-                        user?.name
+                        user?.email
                     }
                 </h4>
 

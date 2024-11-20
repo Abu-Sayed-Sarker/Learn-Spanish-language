@@ -1,7 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
 
@@ -11,7 +12,7 @@ const Login = () => {
     const Location = useLocation()
     const navigat = useNavigate()
 
-    const [Error, setError] = useState({})
+    
 
 
     const handleLoginSubmission = e => {
@@ -28,9 +29,11 @@ const Login = () => {
                 e.target.reset();
 
             })
-            .catch((err) => {
-                const errorCode = err.code;
-                setError({ login: errorCode })
+            .catch((error) => {
+                const errorCode = error.code;
+
+                toast.error(errorCode)
+                
 
             });
     }
@@ -50,9 +53,6 @@ const Login = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input name="password" type="password" placeholder="password" className="input input-bordered" required />
-                        <label className="text-sm text-red-600">
-                            {Error}
-                        </label>
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
