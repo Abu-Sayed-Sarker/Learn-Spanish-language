@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Tutorial = () => {
     return (
@@ -39,6 +40,7 @@ const Tutorial = () => {
                     <iframe className="rounded-lg overflow-hidden" width="330" height="200" src="https://www.youtube.com/embed/t7-nb1wlnyA" title="Learn Spanish in 10 Minutes - ALL the Basics You Need" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
+            <Link to={"/Letslearn"}><button className="btn hover:bg-farst-color bg-secound-color text-black hover:text-white mt-6 px-9">Learn Vocabularies</button></Link>
         </div>
     );
 };

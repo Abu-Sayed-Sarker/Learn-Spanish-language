@@ -83,7 +83,7 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6 ">
-                        <button className="btn btn-primary bg-secound-color hover:bg-farst-color">Login</button>
+                        <button className="btn btn-primary bg-secound-color hover:bg-farst-color text-black hover:text-white">Login</button>
                     </div>
                 </form>
                     <div className="mx-auto pb-3">

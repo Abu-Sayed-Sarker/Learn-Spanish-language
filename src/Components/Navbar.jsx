@@ -84,7 +84,7 @@ const Navbar = () => {
                 
                 <div className="navbar-end">
                     {
-                        user && user?.email ? <div className="flex items-center gap-4"> {user.photoURL? <img className="w-9 h-9 rounded-full" src={user.photoURL} alt="" /> : <FaUserCircle className="text-4xl" />} <button onClick={hendelSignOutButton} className="btn bg-secound-color hover:bg-farst-color">Log Out</button></div> : <Link to={"Login"}><button className="btn bg-secound-color hover:bg-farst-color">Log In</button></Link>
+                        user && user?.email ? <div className="flex items-center gap-4"> {user.photoURL? <img className="w-9 h-9 rounded-full" src={user.photoURL} alt="" /> : <FaUserCircle className="text-4xl" />} <button onClick={hendelSignOutButton} className="btn bg-secound-color hover:bg-farst-color">Log Out</button></div> : <Link to={"Login"}><button className="btn bg-secound-color hover:bg-farst-color hover:text-white">Log In</button></Link>
                     }
                 </div>
             </div>

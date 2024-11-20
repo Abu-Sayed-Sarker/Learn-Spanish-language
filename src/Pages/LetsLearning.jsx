@@ -34,7 +34,7 @@ const LetsLearning = () => {
                         <iframe className="rounded-lg overflow-hidden" width="330" height="200" src="https://www.youtube.com/embed/fCr79zwjzDo" title="Learn the Spanish ALPHABET for beginners // Spanish for Beginners" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
-                <Link to={"/Tutorial"}><button className="btn bg-farst-color hover:bg-secound-color text-white mt-6 px-9">Vew More</button></Link>
+                <Link to={"/Tutorial"}><button className="btn hover:bg-farst-color bg-secound-color text-black hover:text-white mt-6 px-9">Vew More</button></Link>
             </div>
 
 
