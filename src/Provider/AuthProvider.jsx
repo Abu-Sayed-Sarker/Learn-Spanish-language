@@ -14,6 +14,9 @@ const AuthProvider = ({children}) => {
 
     const [loding, setloding] = useState(true)
 
+
+
+
     
     
 
@@ -57,8 +60,10 @@ const AuthProvider = ({children}) => {
     //update profile
 
     const upDaterofile = upDate => {
+        console.log(upDate);
         return updateProfile(auth.currentUser , upDate)
     }
+    
 
 
     const authInfo = {

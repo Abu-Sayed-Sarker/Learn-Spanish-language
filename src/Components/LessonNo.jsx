@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import VokebolaryCard from "./VokebolaryCard";
 
 const LessonNo = () => {
+    const navigate = useNavigate()
     const { id } = useParams()
     const vokebolary = useLoaderData()
+    
+    
+
+
+    const backLesson = () => {
+        navigate("/Letslearn")
+    }
 
     const [Data, setData] = useState([]);
     useEffect(() => {
         const newData = vokebolary.filter(V => V.lesson_no == id)
+        console.log(newData);
+        
         setData(newData)
     }, [id, vokebolary])
 
@@ -25,7 +35,7 @@ const LessonNo = () => {
                 }
             </div>
             <div>
-                <Link to={"/Letslearn"}><button className="btn bg-farst-color hover:bg-secound-color text-white mt-6 px-9">Back to Lesson</button></Link>
+                <button onClick={backLesson} className="btn bg-farst-color hover:bg-secound-color text-white mt-6 px-9">Back to Lesson</button>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import Error from "../Pages/Error";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivetRouter from "./PrivetRouter";
+import UpDateProfilr from "../Components/UpDateProfilr";
 
 const Router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const Router = createBrowserRouter([
                 element: <PrivetRouter><Tutorial></Tutorial></PrivetRouter>
             },
             {
-                path: "MyProfile",
+                path: "/MyProfile",
                 element: <PrivetRouter><MyProfile></MyProfile></PrivetRouter>
             },
             {
@@ -44,6 +45,10 @@ const Router = createBrowserRouter([
             {
                 path: "ragister",
                 element: <Register></Register>
+            },
+            {
+                path: "update-profile",
+                element: <PrivetRouter><UpDateProfilr></UpDateProfilr></PrivetRouter>
             }
         ],
     },
