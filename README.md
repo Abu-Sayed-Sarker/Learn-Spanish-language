@@ -1,3 +1,8 @@
+**An interactive platform designed to help users learn Spanish through engaging lessons, quizzes, and real-life practice scenarios.**
+
+
+
+
 **Project name**
 
 Word Up
