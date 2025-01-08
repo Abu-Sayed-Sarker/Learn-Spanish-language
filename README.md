@@ -13,6 +13,16 @@ Word Up
 https://as-word-up.netlify.app/
 
 
+**Main tecnolog**
+
+* react
+* VIT
+* react router dom
+* firebase
+* tailwind CSS
+* daisy ui
+
+
 **Purpose**
 
 The main purpose of this project is to teach Spanish very easily and make it easy for beginners to learn Spanish.
@@ -41,6 +51,14 @@ The main purpose of this project is to teach Spanish very easily and make it eas
 * npm i aos
 * npm i firebase
 * npm i react-icons
+
+**Project install in local machine**
+
+* npm install
+
+=> run in localhost
+
+npm run dev
 
 
 
